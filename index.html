@@ -6,7 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -90,15 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <body>
-   <header>
+    <header id="header">
         <nav class="navbar" id="navb">
-            <div class="logo" style="z-index: 1;">LOGO</div>
+            <div class="logo" style="z-index: 1;"><a href="#header"><img src="./assets/log1.png" id="logo" alt=""></a></div>
 
             <ul class="nav-links" id="navLinks" style="z-index: 1;">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#services">Nos services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#header"  class="nav-link active">Accueil</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#services" class="nav-link">Nos services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="#livraison" class="btn-commander">Commander</a></li>
             </ul>
 
@@ -106,6 +105,28 @@ document.addEventListener("DOMContentLoaded", function () {
             ☰
             </div>
         </nav>
+        <script>
+            // hover du navbar
+            document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section, header');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+                }
+            });
+            });
+            </script>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -139,10 +160,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                <div id="divbtn">
                     <div>
-                        <button id="btn1" class="btn">Commander</button>
+                        <button id="btn1" class="btn"><a href="#contact">Nous contacter</a></button>
                     </div>
                     <div>
-                        <button id="btn2" class="btn">Voir le menu</button>
+                        <button id="btn2" class="btn"><a href="#menu">Voir le menu</a></button>
                     </div>
                </div>
             </div>
@@ -152,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <a href="https://wa.me/22946095797" class="whatsapp-fixed" target="_blank">
-                <img src="./assets/Splash-Whatsapp-Icon-Png.png" alt="WhatsApp" class="whatsapp-icon">
+                <img src="./assets/icon_wh.png" alt="WhatsApp" class="whatsapp-icon">
             </a>
 
             <!-- <script>
@@ -215,565 +236,582 @@ document.addEventListener("DOMContentLoaded", function () {
     </header>
 
 
-   <!-- <section id="section1">
-        <h1>A Propos</h1> 
-        <div id="se1div1">
-            <div>
-                <img src="./image/rt1.png" alt="photos"> 
-            </div>
-            <div id="se1div2">
-                <div>
-                    <h1>Nous <span>Concernant</span> </h1>
-                </div>
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt sequi, nobis ex recusandae, corrupti culpa atque accusamus tempore tempora excepturi dolorum, dolorem sint incidunt sit. Eos laboriosam in accusantium?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt sequi, nobis ex recusandae, corrupti culpa atque accusamus tempore tempora excepturi dolorum, dolorem sint incidunt sit. Eos laboriosam in accusantium?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt sequi, nobis ex recusandae, corrupti culpa atque accusamus tempore  tempora excepturi dolorum, dolorem sint incidunt sit. Eos laboriosam in accusantium?</p>
-                </div>
-                <div>
-                    <button>Commander</button></div>
-                </div>
-                <div></div>
-            </div>
-        </div>
-    </section> -->
 
 
 
 
     
+    <!-- SECTION IMAGE AVANT SERVICES -->
+    <section class="hero-image">
+    <div class="hero-overlay">
+        <h2>Découvrez nos services exclusifs</h2>
+    </div>
+    </section>
 
+    <!-- SECTION SERVICES -->
     <section id="services">
-        <h1>Services disponible chez Dayanne food</h1>
-        <div class="events-slider">
-            <div class="event-card">
-                <div class="event-info">
-                    <h4>Livraison de repas </h4>
-                    <p>Que ce soit à domicile ou au bureau, commandez en ligne et faites-vous livrer des repas chauds, savoureux et prêts à déguster.</p>
-                    <button>Nous Contacter</button>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-info">
-                    <h4>Restauration événementielle</h4>
-                    <p>Nous offrons pour vos évènements, une restauration digne du nom ( entré, déjeuner, goutté, boisson naturelle, ...)</p>
-                    <button>Nous Contacter</button>
-                </div>
-            </div>
-            <div class="event-card">
-                <div class="event-info">
-                    <h4>Service traiteur</h4>
-                    <p>Nous offrons un service traiteur à votre écoute pour vos évènements (Mariages, anniversaires, réunions…) </p>
-                    <button>Nous Contacter</button>
-                    <!-- notre équipe vous accompagne avec des menus sur mesure. -->
-                </div>
-            </div>
+    <h1>Services disponible chez Dayanne food</h1>
+    <div class="events-slider">
+        <div class="event-card">
+        <div class="event-info">
+            <h4>Livraison de repas</h4>
+            <p>Que ce soit à domicile ou au bureau, commandez en ligne et faites-vous livrer des repas chauds, savoureux et prêts à déguster.</p>
+            <button><a href="#menu">Commander</a></button>
         </div>
+        </div>
+
+        <div class="event-card">
+        <div class="event-info">
+            <h4>Restauration événementielle</h4>
+            <p>Nous offrons pour vos évènements, une restauration digne du nom (entrée, déjeuner, goûter, boisson naturelle, ...)</p>
+            <button><a href="#contact">Nous Contacter</a></button>
+        </div>
+        </div>
+
+        <div class="event-card">
+        <div class="event-info">
+            <h4>Service traiteur</h4>
+            <p>Nous offrons un service traiteur à votre écoute pour vos évènements (Mariages, anniversaires, réunions…)</p>
+            <button><a href="#contact">Nous Contacter</a></button>
+        </div>
+        </div>
+    </div>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll("#services .event-card");
+
+  // Création de l'observateur
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Délai entre chaque carte pour un effet en cascade
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 300);
+      }
+    });
+  }, {
+    threshold: 0.4 // la section doit être visible à 40% avant de lancer l’animation
+  });
+
+  // Observer chaque carte
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
     </section>
 
     <section id="menu">
-        <h2>Nos menu</h2>
-        <p id="titre"> Faite votre choix</p>
-        <div id="container">
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
+            <h2>Nos menu</h2>
+            <p id="titre"> Faite votre choix</p>
+            <div id="container">
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Shawarma.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Charwama</p> 
+                        <p class="prix">1000/1500/2000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
                 </div>
-                <div>
-                    <p class="name">Couscous + Poisson/ Viande</p> 
-                    <p class="prix">1500/2000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/couscous.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Couscous + Poisson/ Viande</p> 
+                        <p class="prix">1500/2000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Riz_g.jpg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Riz gra + Poisson+Aloco</p> 
+                        <p class="prix">1500/2000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Riz+viande.jpg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Riz gras+Poulet ou aileron + Aloco</p> 
+                        <p class="prix">3000/3500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Spaguetti.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Spaguetti + Omlette + Saucisse</p> 
+                        <p class="prix">1000/1500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/spagetti2.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Spaguetti + Viande</p> 
+                        <p class="prix">2000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/patte_rouge.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Pate rouge/Piron + Poulet/Airleron</p> 
+                        <p class="prix">2000/2500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Patte_blanche.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Patte blanche + déousounou au poisson</p> 
+                        <p class="prix">1500/2000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/patte_blanche2.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Patte blanche + légume au poisson</p> 
+                        <p class="prix">2000/2500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Telibo.jpg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Télibo + Sauce tomate + Crincrin</p> 
+                        <p class="prix">2000/2500/3000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/telibo2.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Télibo + Légume au Poisson</p> 
+                        <p class="prix">2000/2500/3000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Salade_de_fruit.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Salade de Fruit Composé</p> 
+                        <p class="prix">1000...2500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/salade_composé.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Salade Composé</p> 
+                        <p class="prix">500...1500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/crêpe.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Crêpes</p> 
+                        <p class="prix">500...2000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Pomme.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Pomme fritte + Viande/Poisson braisé</p> 
+                        <p class="prix">2000/3000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Attieke.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Attièkè + Poisson + Aloco </p> 
+                        <p class="prix">2000/2500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/attieke2.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Attièkè + Viande + Aloco</p> 
+                        <p class="prix">3000/3500FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/Gâteau.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Gâteau</p> 
+                        <p class="prix">7000FCFA </p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="img">
+                        <img src="./assets/pizarre.jpeg" alt="" class="imgmenu">
+                    </div>
+                    <div>
+                        <p class="name">Pizare</p> 
+                        <p class="prix">4000/5000/6000/8000FCFA</p>
+                        <p class="detaille"></p>
+                        <button>Commander</button>
+                    </div>
                 </div>
             </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img2.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Riz gra +Poisson+Aloco</p> 
-                    <p class="prix">1500/2000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img3.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Riz gras+Poulet ou aileron + Aloco</p> 
-                    <p class="prix">3000/3500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img1.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Spaguetti + Omlette + Saucisse</p> 
-                    <p class="prix">1000/1500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img1.jpeg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Spaguetti + Viande</p> 
-                    <p class="prix">2000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Pate rouge/Piron + Poulet/Airleron</p> 
-                    <p class="prix">2000/2500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Patte blanche + déousounou au poisson</p> 
-                    <p class="prix">1500/2000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Patte blanche + légume au poisson</p> 
-                    <p class="prix">1500/2000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Télibo + Sauce tomate + Crincrin</p> 
-                    <p class="prix">2000/2500/3000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Télibo + Légume au Poisson</p> 
-                    <p class="prix">2000/2500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Télibo + Sauce Tomate + Crincrin</p> 
-                    <p class="prix">2000/2500/3000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Salade de Fruit Composé</p> 
-                    <p class="prix">1000...2500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Salade Composé</p> 
-                    <p class="prix">500...1500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Crêpes</p> 
-                    <p class="prix">500...2000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Pomme fritte + Viande/Poisson braisé</p> 
-                    <p class="prix">2000/3000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Attièkè + Poisson + Aloco </p> 
-                    <p class="prix">2000/2500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Attièkè + Viande + Aloco</p> 
-                    <p class="prix">3000/3500FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Gâteau</p> 
-                    <p class="prix">7000FCFA </p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-            <div class="cont">
-                <div class="img">
-                    <img src="./assets/img4.jpg" alt="" class="imgmenu">
-                </div>
-                <div>
-                    <p class="name">Pizare</p> 
-                    <p class="prix">4000/5000/6000/8000FCFA</p>
-                    <p class="detaille"></p>
-                    <button>Commander</button>
-                </div>
-            </div>
-        </div>
-        <script>
-            // Ajoutez ce script à la fin de votre body ou dans un fichier séparé
-            document.addEventListener('DOMContentLoaded', function() {
-                // Sélectionner tous les boutons "Commander"
-                const commanderButtons = document.querySelectorAll('#container .cont button');
-                
-                // Ajouter l'événement click à chaque bouton
-                commanderButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        // Faire défiler jusqu'à la section livraison
-                        const livraisonSection = document.getElementById('livraison');
-                        if (livraisonSection) {
-                            livraisonSection.scrollIntoView({ 
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
+            <script>
+                // Ajoutez ce script à la fin de votre body ou dans un fichier séparé
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Sélectionner tous les boutons "Commander"
+                    const commanderButtons = document.querySelectorAll('#container .cont button');
+                    
+                    // Ajouter l'événement click à chaque bouton
+                    commanderButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            // Faire défiler jusqu'à la section livraison
+                            const livraisonSection = document.getElementById('livraison');
+                            if (livraisonSection) {
+                                livraisonSection.scrollIntoView({ 
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        });
                     });
                 });
-            });
-                    </script>
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                const items = document.querySelectorAll("#menu .cont");
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                        entry.target.classList.add("visible");
+                        }, index * 200); // décalage de 200ms entre chaque plat
+                    }
+                    });
+                }, {
+                    threshold: 0.1 // déclenche quand 10% de l’élément est visible
+                });
+
+                items.forEach(item => observer.observe(item));
+                });
+                </script>
+
     </section>
 
-    
-    <!-- SECTION LIVRAISON l'ancien-->
-    <!-- <section id="livraison" class="livraison-section">
-    <h2>Faites-vous livrer maintenant et tout de suite</h2>
-    
-    <div class="livraison-container">
-        <div class="livraison-image">
-        <img src="./assets/Df_livraison.png" alt="Livraison rapide">
+    <section class="image">
+        <div class="overlay">
+            <h2>Découvrez nos services exclusifs</h2>
         </div>
+    </section>
 
-        <div class="livraison-form">
-        <h3>Formulaire de commande</h3>
-        <h4>Paiement à la livraison</h4>
-
-        <div class="form-row">
-            <input type="text" placeholder="Numéro à contacter" required>
-            <input type="text" placeholder="Ville / Quartier" required>
-        </div><br>
-
-        <textarea class="full" placeholder="Détails de la commande (plats + montants ex: Couscous + Poisson 1500FCFA, Jus 500FCFA)" required></textarea><br><br>
-
-        <button class="livraison-btn">Lancer la commande</button>
-        </div>
-    </div>
-    </section> -->
-
-    
-
-
-
-  <!-- SECTION LIVRAISON -->
+    <!-- SECTION LIVRAISON -->
     <section id="livraison" class="livraison-section">
-        <div class="container">
-            <h2>Formulaire de Livraison</h2>
-            <form id="formulaire-livraison" class="livraison-form">
-                <!-- Champs existants -->
-                <div class="form-group">
-                    <label for="nom">Nom complet *</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone">Téléphone *</label>
-                    <input type="tel" id="telephone" name="telephone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="adresse">Adresse de livraison *</label>
-                    <textarea id="adresse" name="adresse" required></textarea>
-                </div>
+    <h2>Formulaire de Livraison</h2>
 
-                <!-- NOUVEAUX CHAMPS -->
-                <div class="form-group">
-                    <label for="menu-commande">Menu commandé *</label>
-                    <input type="text" id="menu-commande" name="menu-commande" required 
-                        placeholder="Le menu s'affichera automatiquement après commande">
-                </div>
-
-                <div class="form-group">
-                    <label for="prix-menu">Prix du menu </label>
-                    <select id="prix-menu" name="prix-menu" required>
-                        <option value="">Sélectionnez un prix</option>
-                        <!-- Les options seront ajoutées dynamiquement -->
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="jus">Jus (Optionnel)</label>
-                    <select id="jus" name="jus">
-                        <option value="aucun">Aucun</option>
-                        <option value="bissap">Jus de bissap (+500 FCFA)</option>
-                        <option value="ananas">Jus d'ananas (+500 FCFA)</option>
-                        <option value="citron">Jus de citron (+500 FCFA)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="total">Total à payer</label>
-                    <input type="text" id="total" name="total" readonly 
-                        placeholder="Le total sera calculé automatiquement">
-                </div>
-
-                <div class="form-group">
-                    <label for="notes">Notes supplémentaires</label>
-                    <textarea id="notes" name="notes" 
-                            placeholder="Instructions spéciales, allergies..."></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit">Confirmer la commande</button>
-            </form>
+    <div class="livraison-container">
+        <!-- Image -->
+        <div class="livraison-image">
+            <img src="./assets/Df_livraison.png" alt="Illustration livraison">
         </div>
+
+        <!-- Formulaire -->
+        <form id="formulaire-livraison" class="livraison-form">
+            <div class="form-row">
+                <div class="form-group">
+                <label for="nom">Nom complet *</label>
+                <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                <label for="telephone">Téléphone *</label>
+                <input type="tel" id="telephone" name="telephone" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="adresse">Adresse de livraison *</label>
+                <textarea id="adresse" name="adresse" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="menu-commande">Menu commandé *</label>
+                <input type="text" id="menu-commande" name="menu-commande" required 
+                    placeholder="Le menu s'affichera automatiquement après commande">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                <label for="prix-menu">Prix du menu</label>
+                <select id="prix-menu" name="prix-menu" required>
+                    <option value="">Sélectionnez un prix</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="jus">Jus (Optionnel)</label>
+                <select id="jus" name="jus">
+                    <option value="aucun">Aucun</option>
+                    <option value="bissap">Jus de bissap (500 FCFA)</option>
+                    <option value="ananas">Jus d'ananas (500 FCFA)</option>
+                    <option value="citron">Jus de citron (500 FCFA)</option>
+                    <option value="adoyo">Jus de adoyo (500 FCFA)</option>
+                    <option value="tchakpalo">Jus de tchakpalo (500 FCFA)</option>
+                    <option value="Yaourt">Yaourt (500 FCFA)</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="total">Total à payer</label>
+                <input type="text" id="total" name="total" readonly 
+                    placeholder="Le total sera calculé automatiquement">
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes supplémentaires</label>
+                <textarea id="notes" name="notes"
+                        placeholder="Instructions spéciales, allergies..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Confirmer la commande</button>
+        </form>
+    </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-        // Éléments du formulaire
-        const menuCommandeInput = document.getElementById('menu-commande');
-        const prixMenuSelect = document.getElementById('prix-menu');
-        const jusSelect = document.getElementById('jus');
-        const totalInput = document.getElementById('total');
-        
-        // Variables pour stocker les données du plat
-        let platSelectionne = null;
-        let prixOptions = [];
+                document.addEventListener('DOMContentLoaded', function() {
+            // Éléments du formulaire
+            const menuCommandeInput = document.getElementById('menu-commande');
+            const prixMenuSelect = document.getElementById('prix-menu');
+            const jusSelect = document.getElementById('jus');
+            const totalInput = document.getElementById('total');
+            
+            // Variables pour stocker les données du plat
+            let platSelectionne = null;
+            let prixOptions = [];
 
-        // 1. Gestion des clics sur les boutons "Commander"
-        const commanderButtons = document.querySelectorAll('#container .cont button');
-        
-        commanderButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cont = this.closest('.cont');
-                const nomPlat = cont.querySelector('.name').textContent;
-                const prixText = cont.querySelector('.prix').textContent;
-                
-                // Stocker les données du plat
-                platSelectionne = {
-                    nom: nomPlat,
-                    prixText: prixText
-                };
-                
-                // Remplir automatiquement le formulaire
-                remplirFormulaireAutomatique(nomPlat, prixText);
-                
-                // Scroll vers la section livraison
-                const livraisonSection = document.getElementById('livraison');
-                if (livraisonSection) {
-                    livraisonSection.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // 2. Fonction pour remplir le formulaire automatiquement
-        function remplirFormulaireAutomatique(nomPlat, prixText) {
-            // Remplir le champ menu
-            menuCommandeInput.value = nomPlat;
-            menuCommandeInput.classList.add('auto-filled');
+            // 1. Gestion des clics sur les boutons "Commander"
+            const commanderButtons = document.querySelectorAll('#container .cont button');
             
-            // Extraire les prix et remplir le select
-            extraireEtRemplirPrix(prixText);
-            
-            // Réinitialiser le jus et calculer le total
-            jusSelect.value = 'aucun';
-            calculerTotal();
-        }
-
-        // 3. Fonction pour extraire les prix du texte
-        function extraireEtRemplirPrix(prixText) {
-            // Vider le select
-            prixMenuSelect.innerHTML = '<option value="">Sélectionnez un prix</option>';
-            prixOptions = [];
-            
-            // Extraire tous les nombres du texte
-            const prixMatches = prixText.match(/\d+/g);
-            
-            if (prixMatches) {
-                prixMatches.forEach(prix => {
-                    const prixNum = parseInt(prix);
-                    if (!isNaN(prixNum)) {
-                        prixOptions.push(prixNum);
-                        
-                        // Ajouter l'option au select
-                        const option = document.createElement('option');
-                        option.value = prixNum;
-                        option.textContent = `${prixNum} FCFA`;
-                        prixMenuSelect.appendChild(option);
+            commanderButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const cont = this.closest('.cont');
+                    const nomPlat = cont.querySelector('.name').textContent;
+                    const prixText = cont.querySelector('.prix').textContent;
+                    
+                    // Stocker les données du plat
+                    platSelectionne = {
+                        nom: nomPlat,
+                        prixText: prixText
+                    };
+                    
+                    // Remplir automatiquement le formulaire
+                    remplirFormulaireAutomatique(nomPlat, prixText);
+                    
+                    // Scroll vers la section livraison
+                    const livraisonSection = document.getElementById('livraison');
+                    if (livraisonSection) {
+                        livraisonSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
-            }
-            
-            // Si aucun prix trouvé, permettre la saisie manuelle
-            if (prixOptions.length === 0) {
-                const option = document.createElement('option');
-                option.value = "autre";
-                option.textContent = "Prix personnalisé";
-                prixMenuSelect.appendChild(option);
-            }
-        }
+            });
 
-        // 4. Calcul automatique du total
-        function calculerTotal() {
-            const prixMenu = parseInt(prixMenuSelect.value) || 0;
-            const jusValue = jusSelect.value;
-            const prixJus = (jusValue !== 'aucun') ? 500 : 0;
-            const total = prixMenu + prixJus;
-            
-            totalInput.value = total > 0 ? `${total} FCFA` : '';
-        }
-
-        // 5. Événements pour le calcul en temps réel
-        prixMenuSelect.addEventListener('change', calculerTotal);
-        jusSelect.addEventListener('change', calculerTotal);
-
-        // 6. Gestion de la soumission du formulaire
-        document.getElementById('formulaire-livraison').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validation
-            if (!menuCommandeInput.value) {
-                alert('Veuillez sélectionner un menu en cliquant sur "Commander"');
-                return;
+            // 2. Fonction pour remplir le formulaire automatiquement
+            function remplirFormulaireAutomatique(nomPlat, prixText) {
+                // Remplir le champ menu
+                menuCommandeInput.value = nomPlat;
+                menuCommandeInput.classList.add('auto-filled');
+                
+                // Extraire les prix et remplir le select
+                extraireEtRemplirPrix(prixText);
+                
+                // Réinitialiser le jus et calculer le total
+                jusSelect.value = 'aucun';
+                calculerTotal();
             }
-            
-            if (!prixMenuSelect.value) {
-                alert('Veuillez sélectionner un prix pour le menu');
-                return;
-            }
-            
-            // Récupérer les données du formulaire
-            const formData = {
-                nom: document.getElementById('nom').value,
-                telephone: document.getElementById('telephone').value,
-                adresse: document.getElementById('adresse').value,
-                menu: menuCommandeInput.value,
-                prix: prixMenuSelect.value,
-                jus: jusSelect.value,
-                total: totalInput.value,
-                notes: document.getElementById('notes').value
-            };
-            
-            // Ici vous pouvez envoyer les données à votre backend
-            console.log('Commande soumise:', formData);
-            alert('Commande envoyée avec succès! Nous vous contacterons bientôt.');
-            
-            // Réinitialiser le formulaire
-            this.reset();
-            menuCommandeInput.classList.remove('auto-filled');
-            totalInput.value = '';
-        });
 
-        // 7. Permettre la saisie manuelle si nécessaire
-        menuCommandeInput.addEventListener('input', function() {
-            if (this.value && !this.value.includes(platSelectionne?.nom)) {
-                this.classList.remove('auto-filled');
-                // Réinitialiser les prix si modification manuelle
+            // 3. Fonction pour extraire les prix du texte
+            function extraireEtRemplirPrix(prixText) {
+                // Vider le select
                 prixMenuSelect.innerHTML = '<option value="">Sélectionnez un prix</option>';
-                const option = document.createElement('option');
-                option.value = "autre";
-                option.textContent = "Prix personnalisé";
-                prixMenuSelect.appendChild(option);
-            }
-        });
-
-        // 8. Gestion du prix personnalisé
-        prixMenuSelect.addEventListener('change', function() {
-            if (this.value === "autre") {
-                const prixPersonnalise = prompt('Veuillez entrer le prix personnalisé (FCFA):');
-                if (prixPersonnalise && !isNaN(prixPersonnalise)) {
+                prixOptions = [];
+                
+                // Extraire tous les nombres du texte
+                const prixMatches = prixText.match(/\d+/g);
+                
+                if (prixMatches) {
+                    prixMatches.forEach(prix => {
+                        const prixNum = parseInt(prix);
+                        if (!isNaN(prixNum)) {
+                            prixOptions.push(prixNum);
+                            
+                            // Ajouter l'option au select
+                            const option = document.createElement('option');
+                            option.value = prixNum;
+                            option.textContent = `${prixNum} FCFA`;
+                            prixMenuSelect.appendChild(option);
+                        }
+                    });
+                }
+                
+                // Si aucun prix trouvé, permettre la saisie manuelle
+                if (prixOptions.length === 0) {
                     const option = document.createElement('option');
-                    option.value = prixPersonnalise;
-                    option.textContent = `${prixPersonnalise} FCFA (Personnalisé)`;
-                    this.appendChild(option);
-                    this.value = prixPersonnalise;
-                    calculerTotal();
-                } else {
-                    this.value = "";
+                    option.value = "autre";
+                    option.textContent = "Prix personnalisé";
+                    prixMenuSelect.appendChild(option);
                 }
             }
+
+            // 4. Calcul automatique du total
+            function calculerTotal() {
+                const prixMenu = parseInt(prixMenuSelect.value) || 0;
+                const jusValue = jusSelect.value;
+                const prixJus = (jusValue !== 'aucun') ? 500 : 0;
+                const total = prixMenu + prixJus;
+                
+                totalInput.value = total > 0 ? `${total} FCFA` : '';
+            }
+
+            // 5. Événements pour le calcul en temps réel
+            prixMenuSelect.addEventListener('change', calculerTotal);
+            jusSelect.addEventListener('change', calculerTotal);
+
+            // 6. Gestion de la soumission du formulaire
+            document.getElementById('formulaire-livraison').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validation
+                if (!menuCommandeInput.value) {
+                    alert('Veuillez sélectionner un menu en cliquant sur "Commander"');
+                    return;
+                }
+                
+                if (!prixMenuSelect.value) {
+                    alert('Veuillez sélectionner un prix pour le menu');
+                    return;
+                }
+                
+                // Récupérer les données du formulaire
+                const formData = {
+                    nom: document.getElementById('nom').value,
+                    telephone: document.getElementById('telephone').value,
+                    adresse: document.getElementById('adresse').value,
+                    menu: menuCommandeInput.value,
+                    prix: prixMenuSelect.value,
+                    jus: jusSelect.value,
+                    total: totalInput.value,
+                    notes: document.getElementById('notes').value
+                };
+                
+                // Ici vous pouvez envoyer les données à votre backend
+                console.log('Commande soumise:', formData);
+                alert('Commande envoyée avec succès! Nous vous contacterons bientôt.');
+                
+                // Réinitialiser le formulaire
+                this.reset();
+                menuCommandeInput.classList.remove('auto-filled');
+                totalInput.value = '';
+            });
+
+            // 7. Permettre la saisie manuelle si nécessaire
+            menuCommandeInput.addEventListener('input', function() {
+                if (this.value && !this.value.includes(platSelectionne?.nom)) {
+                    this.classList.remove('auto-filled');
+                    // Réinitialiser les prix si modification manuelle
+                    prixMenuSelect.innerHTML = '<option value="">Sélectionnez un prix</option>';
+                    const option = document.createElement('option');
+                    option.value = "autre";
+                    option.textContent = "Prix personnalisé";
+                    prixMenuSelect.appendChild(option);
+                }
+            });
+
+            // 8. Gestion du prix personnalisé
+            prixMenuSelect.addEventListener('change', function() {
+                if (this.value === "autre") {
+                    const prixPersonnalise = prompt('Veuillez entrer le prix personnalisé (FCFA):');
+                    if (prixPersonnalise && !isNaN(prixPersonnalise)) {
+                        const option = document.createElement('option');
+                        option.value = prixPersonnalise;
+                        option.textContent = `${prixPersonnalise} FCFA (Personnalisé)`;
+                        this.appendChild(option);
+                        this.value = prixPersonnalise;
+                        calculerTotal();
+                    } else {
+                        this.value = "";
+                    }
+                }
+            });
         });
-    });
         </script>
     </section>
-  
+
+
+
     
 
-    <!-- SECTION CONTACT -->
+        <!-- SECTION CONTACT -->
     <section id="contact" class="contact-section">
     <h2>Contactez-nous maintenant</h2>
 
@@ -832,83 +870,65 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
         <div class="contact-right">
-        <h3>Envoyez-nous un message</h3>
-        <div class="form-row">
-            <input type="text" placeholder="Nom complet">
-            <input type="email" placeholder="Adresse e-mail">
-        </div><br>
-        <input type="text" class="full" placeholder="Objet du message"><br><br>
-        <textarea class="full" placeholder="Votre message..."></textarea><br><br>
-        <button class="contact-btn">Envoyer</button>
-        </div>
+                <h3>Envoyez-nous un message</h3>
+<section id="contact">
+    <div class="contact-container">
+
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="2b6d0733-3f00-47ad-a4cb-4923142222c6">
+            <input type="hidden" name="subject" value="🍽️ Nouveau message depuis le site web de Dayane Food">
+            <input type="hidden" name="from_name" value="Formulaire Dayane Food">
+
+            <div class="form-row">
+                <input type="text" name="nom" placeholder="Nom complet" required>
+                <input type="email" name="email" placeholder="Adresse e-mail" required>
+            </div><br>
+
+            <input type="text" class="full" name="objet" placeholder="Objet du message" required><br><br>
+            <textarea class="full" name="message" placeholder="Votre message..." required></textarea><br><br>
+
+            <button type="submit" class="contact-btn">Envoyer</button>
+
+            <!-- Zone d’affichage du message de confirmation -->
+            <p id="form-status" style="margin-top:10px; font-weight:bold;"></p>
+        </form>
+
     </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Empêche le rechargement et la redirection
+            status.textContent = "⏳ Envoi en cours...";
+            status.style.color = "blue";
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData
+                });
+
+                if (response.ok) {
+                    status.textContent = "✅ Message envoyé avec succès ! Nous vous répondrons bientôt.";
+                    status.style.color = "green";
+                    form.reset(); // vide les champs
+                } else {
+                    status.textContent = "❌ Erreur : impossible d’envoyer le message. Réessayez plus tard.";
+                    status.style.color = "red";
+                }
+            } catch (error) {
+                status.textContent = "⚠️ Erreur de connexion. Vérifiez votre réseau et réessayez.";
+                status.style.color = "red";
+            }
+        });
+    </script>
+</section>
+
     </section>
-
-
-
-    
-
-
-
-
-    
-
-
-
-
-
-    <!-- <section id="menu2">
-        <h1>Services disponible chez Dayanne food</h1>
-        <div class="menu_container">
-            <div class="container1">
-                <div class="container2">
-                    <img src="./image/img1.jpeg" alt="" class="imgmenu">
-                </div>
-                <div class="container3">
-                    <span>Riz gra + Poisson + Aloko...1500f/2000f </span>
-                     <button>Commander</button>
-                </div> 
-               
-            </div>
-            <div class="container1">
-                <div class="container2">
-                    <img src="./image/img3.jpg" alt="" class="imgmenu">
-                </div>
-                <div class="container3">
-                    <span>Couscous + Poisson/ Viande...1500/2000F</span>
-                    <button>Commander</button>
-                </div> 
-               
-            </div>
-            <div class="container1">
-                 <div class="container2">
-                    <img src="./image/img2.jpg" alt="" class="imgmenu">
-                </div>
-                <div class="container3">
-                    <span>Charwama...1000f/1500f/2000f</span>
-                    <button>Commander</button>
-                </div> 
-               
-            </div>
-            <div class="container1">
-                <div class="container2">
-                    <img src="./image/img1.jpeg" alt="" class="imgmenu">
-                </div>
-                <div class="container3">
-                    <span>Riz gra + Poisson + Aloko...1500f/2000f </span>
-                     <button>Commander</button>
-                </div> 
-               
-            </div>
-        </div>
-        
-    </section> -->
-
-
-
-
-
-   
+  
 
     <section class="testimonials">
         <h2 class="title">Témoignages</h2>
@@ -1006,10 +1026,10 @@ document.addEventListener("DOMContentLoaded", function () {
     <footer id="footer">
         <div id="footerdiv1">
         <div>
-            <p>logo</p>
+            <p><img id="img_footer" src="./assets/logo.png" alt=""></p>
             <ul>
-            <li>savoir vivre</li>
-            <li>Gérer vos dépenses</li>
+            <li>La bonne nourriture</li>
+            <li>Et vite</li>
             </ul>
         </div>
 
@@ -1050,15 +1070,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </ul>
         </div>
 
-        <div>
-            <p>Entreprise</p>
-            <ul>
-            <li>À propos</li>
-            <li>Carrières</li>
-            <li>Contact</li>
-            <li>Mentions légales</li>
-            </ul>
-        </div>
+
         <br><br>
         </div>
         <br>
@@ -1082,29 +1094,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-    
 
 
 </body>
