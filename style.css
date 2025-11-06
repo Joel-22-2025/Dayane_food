@@ -1,7 +1,9 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  /* font-style:italic; */
 }
 /* Style général des liens */
 .nav-links li a {
@@ -448,7 +450,6 @@ nav.scrolled {
 }
 
 #services h1 {
-  font-family: fantasy;
   margin-top: 30px;
   margin-bottom: 80px;
   color: #c53030;
@@ -767,6 +768,7 @@ nav.scrolled {
 }
 
 .livraison-section h2 {
+  padding-top: 20px;
   text-align: center;
   color: var(--dark-red);
   font-size: 2rem;
@@ -942,7 +944,7 @@ textarea {
 
 .contact-section {
   background: #fff;
-  padding: 50px 20px;
+  padding: 100px 20px;
   /* text-align: center; */
   font-family: "Poppins", sans-serif;
 }
@@ -1085,14 +1087,16 @@ a{
 
 #menu h2 {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 50px;
   color: darkred;
 }
 
 #menu #titre {
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 5px;
   font-weight: bold;
+  font-style: italic;
 }
 
 #menu #container {
@@ -1304,6 +1308,9 @@ a{
 }
 #img_footer{
   width: 200px;
+}
+#links li a{
+  color: white;
 }
 @media (max-width: 768px) {
     #footer #container{

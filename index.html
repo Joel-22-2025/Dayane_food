@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dayane_food</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 </head>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -36,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Numéro WhatsApp de l'administrateur (sans le +)
-        const adminNumber = "22946095797";
+        const adminNumber = "22961161744";
 
         // Construction du message détaillé avec tous les nouveaux champs
-        let message = `📦 *NOUVELLE COMMANDE DAYANNE FOOD* 📦\n\n`;
+        let message = `📦 *NOUVELLE COMMANDE DAYANE FOOD* 📦\n\n`;
         
         // Informations client
         message += `👤 *INFORMATIONS CLIENT*\n`;
@@ -77,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open(whatsappLink, '_blank');
 
         // Confirmation
-        alert("✅ Votre commande a été envoyée avec succès sur WhatsApp !");
+        alert("✅ Votre commande a été envoyée avec succès!");
 
         // Réinitialiser le formulaire (optionnel)
         form.reset();
@@ -95,9 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <ul class="nav-links" id="navLinks" style="z-index: 1;">
                 <li><a href="#header"  class="nav-link active">Accueil</a></li>
-                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#menu" class="nav-link">Menus</a></li>
                 <li><a href="#services" class="nav-link">Nos services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-link">Contacts</a></li>
                 <li><a href="#livraison" class="btn-commander">Commander</a></li>
             </ul>
 
@@ -172,36 +175,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="./assets/rt1.png" alt="Chef">
             </div>
 
-            <a href="https://wa.me/22946095797" class="whatsapp-fixed" target="_blank">
+            <a href="https://wa.me/22961161744" class="whatsapp-fixed" target="_blank">
                 <img src="./assets/icon_wh.png" alt="WhatsApp" class="whatsapp-icon">
             </a>
 
-            <!-- <script>
-                // const backgrounds = [
-                // "url('./image/img4.jpg')",
-                // "url('./image/img1.jpg')",
-                // "url('./image/img2.jpg')"
-                // ];
-
-                const backgrounds = [
-                    "linear-gradient(rgba(0,50,100,0.5), rgba(0,50,100,0.7)), url('./image/img4.jpg')",
-                    "linear-gradient(rgba(0,50,100,0.5), rgba(0,50,100,0.7)), url('./image/img1.jpg')",
-                    "linear-gradient(rgba(0,50,100,0.5), rgba(0,50,100,0.7)), url('./image/img2.jpg')"
-                ];
-
-
-                let index = 0;
-                const heroSection = document.querySelector('.hero');
-
-                function changeBackground() {
-                heroSection.style.backgroundImage = backgrounds[index];
-                index = (index + 1) % backgrounds.length;
-                }
-
-                changeBackground();
-                setInterval(changeBackground, 4000); // change toutes les 4 secondes
-
-            </script>  -->
             <script>
             const navbar = document.getElementById('navb');
 
@@ -250,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- SECTION SERVICES -->
     <section id="services">
-    <h1>Services disponible chez Dayanne food</h1>
+    <h1>Services disponible chez Dayane food</h1>
     <div class="events-slider">
         <div class="event-card">
         <div class="event-info">
@@ -303,8 +280,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
 
     <section id="menu">
-            <h2>Nos menu</h2>
-            <p id="titre"> Faite votre choix</p>
+            <h2 class="title">Découvrez nos menus</h2>
+            <h3 id="titre" > Faite votre choix</h3>
             <div id="container">
                 <div class="cont">
                     <div class="img">
@@ -561,7 +538,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <section class="image">
         <div class="overlay">
-            <h2>Découvrez nos services exclusifs</h2>
+            <h2>Faites vous livrer.</h2>
         </div>
     </section>
 
@@ -742,15 +719,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 
                 // Validation
-                if (!menuCommandeInput.value) {
-                    alert('Veuillez sélectionner un menu en cliquant sur "Commander"');
-                    return;
-                }
+                // if (!menuCommandeInput.value) {
+                //     alert('Veuillez sélectionner un menu en cliquant sur "Commander"');
+                //     return;
+                // }
                 
-                if (!prixMenuSelect.value) {
-                    alert('Veuillez sélectionner un prix pour le menu');
-                    return;
-                }
+                // if (!prixMenuSelect.value) {
+                //     alert('Veuillez sélectionner un prix pour le menu');
+                //     return;
+                // }
                 
                 // Récupérer les données du formulaire
                 const formData = {
@@ -825,10 +802,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Téléphone -->
         <div class="info-box">
-            <a href="tel:+2290166411946" class="icon"><i class="fas fa-phone"></i></a>
+            <a href="tel:+2290161161744" class="icon"><i class="fas fa-phone"></i></a>
             <div>
-            <h4><a href="tel:+2290166411946">Appelez-nous</a></h4>
-            <p>+229 01 66 41 19 46 / 01 65 47 02 06</p>
+            <h4><a href="tel:+2290161161744">Appelez-nous</a></h4>
+            <p>+229 01 61 16 17 44 / 01 43 51 42 74</p>
             </div>
         </div>
 
@@ -861,10 +838,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Email -->
         <div class="info-box">
-            <a href="mailto:dayanesalem@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:dayanefood@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
             <div>
-            <h4><a href="mailto:dayanesalem@gmail.com">Email</a></h4>
-            <p>dayanesalem@gmail.com</p>
+            <h4><a href="mailto:dayanefood@gmail.com">Email</a></h4>
+            <p>dayanefood@gmail.com</p>
             </div>
         </div>
         </div>
@@ -1036,10 +1013,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <div>
             <p>Lien utile</p>
             <ul>
-            <li>✔Accueil</li>
-            <li>✔Menu</li>
-            <li>✔Nos services</li>
-            <li>✔Contact</li>
+            <li>Accueil</li>
+            <li>Menu</li>
+            <li>Nos services</li>
+            <li>Contact</li>
             </ul>
         </div>
 
@@ -1079,7 +1056,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div id="container">
         <div>
-            <p>© 2025 Gérer vos dépenses. Tous droits réservés.</p>
+            <p>© Tous droits réservés.</p>
         </div>
         <div>
             <a href="#"><img src="assets/fb.PNG" alt=""></a>
